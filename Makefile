@@ -1,5 +1,5 @@
 NAME=om-welcome
-VERSION=2.3.0.3
+VERSION=2.1.3
 TRANSLATIONS=de en fr id it pt_BR pt_PT tr
 bindir=/usr/bin
 sysconfdir=/etc
