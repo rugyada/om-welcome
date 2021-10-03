@@ -4,7 +4,7 @@ Release:	1
 Summary:	OpenMandriva Lx Welcome Page
 License:	GPLv2
 Group:		System/Configuration/Other
-URL:		https://github.com/rugyada/om-welcome1
+URL:		https://github.com/rugyada/om-welcome
 Source0:	https://github.com/rugyada/om-welcome/archive/%{version}.tar.gz
 Requires:	kdialog
 Requires:	htmlscript >= 1.0.1
