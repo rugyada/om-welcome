@@ -1,11 +1,11 @@
 Name:		om-welcome
-Version:	2.3.0.4
+Version:	2.3.0.5
 Release:	1
 Summary:	OpenMandriva Lx Welcome Page
 License:	GPLv2
 Group:		System/Configuration/Other
 URL:		https://github.com/rugyada/om-welcome
-Source0:	https://github.com/rugyada/om-welcome/archive/%{version}.tar.gz
+Source0:	https://github.com/rugyada/om-welcome-source/archive/%{version}.tar.gz
 Requires:	kdialog
 Requires:	htmlscript >= 1.0.1
 BuildRequires:	make
