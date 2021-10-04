@@ -1,2 +1,0 @@
-#!/bin/sh
-pkexec dnf --assumeyes autoremove
