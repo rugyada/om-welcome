@@ -1,0 +1,12 @@
+#!/bin/bash
+if rpm -qa |grep "blender*"; then 
+	kdialog --title $"OpenMandriva"  --msgbox  $" Blender is already installed."
+else 
+kdialog --title $"OpenMandriva" --msgbox $"Work in progress, please wait until the process is done, it may take a while"
+	pkexec dnf install --assumeyes blender
+	if which blender; then
+		kdialog --title $"OpenMandriva"  --msgbox  $" Blender successfully installed."
+	else
+		kdialog --title $"OpenMandriva"  --msgbox  $" Blender not installed."
+	fi
+fi
