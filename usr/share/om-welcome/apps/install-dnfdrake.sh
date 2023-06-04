@@ -2,23 +2,19 @@
 if rpm -q dnfdrake &>/dev/null; then
 	kdialog --title $"OpenMandriva" --msgbox $"DnfDrake is already installed."
 else
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress. Please wait... Step 1 of 3."
+kdialog --title $"OpenMandriva" --msgbox $"Installing DnfDrake. Please wait until the process is done, it may take a while"
 dnf clean all;dnf repolist
 mkdir /tmp/dnfdrake-download
 cd /tmp/dnfdrake-download
-dnf install -y dnf-utils python-dnf-plugin-versionlock
+dnf install -y dnf-utils python-dnf-plugin-versionlock createrepo_c lsb-release
 enable-repo unsupported
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress. Please wait... Step 2 of 3."
-dnf download gambas3-gb-dbus-3.15.2-6 gambas3-gb-form-3.15.2-6 gambas3-gb-gtk3-3.15.2-6 gambas3-gb-gui-3.15.2-6 gambas3-gb-image-3.15.2-6 gambas3-gb-qt5-3.15.2-6 gambas3-runtime-3.15.2-6 dnfdrake
+dnf download gambas3-gb-dbus gambas3-gb-form gambas3-gb-gtk3 gambas3-gb-gui gambas3-gb-image gambas3-gb-qt5 gambas3-runtime gambas3-gb-form-stock dnfdrake
 #
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress. Step 3 of 3. Please wait until the process is done, it may take a while"
 rpm -ivh --nodeps *.rpm
 	if rpm -q dnfdrake &>/dev/null; then
-		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
-#		disable-repo unsupported
+	kdialog --title $"OpenMandriva" --msgbox $"DnfDrake successfully installed."
 	else
-		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
-#		disable-repo unsupported
+	kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
 	fi
 fi
 

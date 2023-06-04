@@ -1,12 +1,15 @@
 #!/bin/bash
-if which choqok; then 
+if which choqok; then
 	kdialog --title $"OpenMandriva"  --msgbox  $" Choqok is already installed."
-else 
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress, please wait until the process is done, it may take a while"
+else
+	APP=$"Choqok"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
 	pkexec dnf install --assumeyes choqok
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
 	if which choqok; then
-		kdialog --title $"OpenMandriva"  --msgbox  $" Choqok successfully installed."
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
 	else
-		kdialog --title $"OpenMandriva"  --msgbox  $" Choqok not installed."
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
 	fi
 fi

@@ -1,13 +1,16 @@
 #!/bin/bash
 
-if which homebank; then 
+if which homebank; then
 	kdialog --title $"OpenMandriva"  --msgbox  $" Homebank is already installed.";
-else 
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress, please wait until the process is done, it may take a while"
+else
+	APP=$"Homebank"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
 	pkexec dnf install --assumeyes homebank
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
 	if which homebank; then
-		kdialog --title $"OpenMandriva"  --msgbox  $" Homebank successfully installed.";
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
 	else
-		kdialog --title $"OpenMandriva"  --msgbox  $" Homebank not installed.";
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
 	fi
 fi

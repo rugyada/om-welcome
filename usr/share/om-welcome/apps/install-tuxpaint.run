@@ -1,12 +1,15 @@
 #!/bin/bash
-if rpm -q tuxpaint; then 
+if rpm -q tuxpaint; then
 	kdialog --title $"OpenMandriva"  --msgbox  $" Tux Paint is already installed."
-else 
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress, please wait until the process is done, it may take a while"
-	pkexec dnf install --assumeyes tuxpaint
+else
+	APP=$"Tux Paint"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes tuxpaint tuxpaint-stamps
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
 	if rpm -q tuxpaint; then
-		kdialog --title $"OpenMandriva"  --msgbox  $" Tux Paint successfully installed."
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
 	else
-		kdialog --title $"OpenMandriva"  --msgbox  $" Tux Paint not installed."
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
 	fi
 fi

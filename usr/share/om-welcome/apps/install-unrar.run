@@ -1,13 +1,16 @@
 #!/bin/bash
-if rpm -q unrar; then 
-	kdialog --title $"OpenMandriva"  --msgbox  $" Unrar is already installed."
-else 
-kdialog --title $"OpenMandriva" --msgbox $"Work in progress, please wait until the process is done, it may take a while"
+if rpm -q unar; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" Unar is already installed."
+else
+	APP=$"Unar"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
 	enable-repo non-free
-	pkexec dnf install --assumeyes unrar zip p7zip ncompress
-	if which unrar; then
-		kdialog --title $"OpenMandriva"  --msgbox  $" Unrar successfully installed."
+	pkexec dnf install --assumeyes unar zip p7zip ncompress
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which unar; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
 	else
-		kdialog --title $"OpenMandriva"  --msgbox  $" Unrar not installed."
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
 	fi
 fi
