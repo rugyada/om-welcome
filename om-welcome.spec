@@ -10,7 +10,7 @@ Requires:	kdialog
 Requires:	htmlscript >= 1.0.1
 BuildRequires:	make
 BuildArch:	noarch
-#%rename oma-welcome
+%rename oma-welcome
 
 %description
 Introduce new users to the OpenMandriva Lx.
