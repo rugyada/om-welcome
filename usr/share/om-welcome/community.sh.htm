@@ -27,8 +27,9 @@ cat << EOF
 			<li><a href="news.sh.htm">$menunews</a></li>
 			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
 			<li><a href="conf.sh.htm">$menuconfigure</a></li>
-			<li><a href="apps-office.sh.htm">$menuapps</a></li>
-			<li><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="apps.sh.htm">$menuapps</a></li>
+			<li class='active'><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
 			<li><a href="about.sh.htm">$menuabout</a></li>
 		</ul>
 	</nav>
@@ -59,11 +60,6 @@ cat << EOF
 						$descartwork</p>
 					</li>
 					<li>
-						<a target="hidden" href=./apps/open-mainlisting.run><img src="images/internet-mail.svg" class="alignleft"/></a>
-						<span><a class="title" target="hidden" href=./apps/open-mainlisting.run>$titlemainlisting<br/> </a></span>
-						$descmainlisting</p>
-					</li>
-					<li>
 						<a target="hidden" href=./apps/open-bugzilla.run><img src="images/bug2.svg" class="alignleft"/></a>
 						<span><a class="title" target="hidden" href=./apps/open-bugzilla.run>$titleqa <br/></a></span>
 						$descqa</p>
@@ -91,7 +87,7 @@ cat << EOF
 		<a href="apps-office.sh.htm" class="button">$previous</a>
 	</div>
 	<div id="rodape">
-		<a href="about.sh.htm" class="button">$next</a>
+		<a href="repo.sh.htm" class="button">$next</a>
 	</div>
 </body>
 </html>

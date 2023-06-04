@@ -36,11 +36,12 @@ cat << EOF
 	<nav id="nav">
 		<ul class="container">
 			<li><a href="index.sh.htm">$menuindex</a></li>
-			<li><a href="news.sh.htm">$menunews</a></li>
+			<li class='active'><a href="news.sh.htm">$menunews</a></li>
 			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
 			<li><a href="conf.sh.htm">$menuconfigure</a></li>
-			<li><a href="apps-office.sh.htm">$menuapps</a></li>
+			<li><a href="apps.sh.htm">$menuapps</a></li>
 			<li><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
 			<li><a href="about.sh.htm">$menuabout</a></li>
 		</ul>
 	</nav>
@@ -107,17 +108,6 @@ cat << EOF
 						</p>
 					</div>
 				</div>
-<!-- 				<div class="sliderkit-panel">
-					<div class="sliderkit-news">
-						<h3 class="titlePage">Drakconf</h3>
-						<div class="logo">
-							<img src="images/drakconf.png"/>
-						 </div>
-						<p>
-						$drakconfdesc
-						</p>
-					</div>
-				</div> -->
 				<div class="sliderkit-panel">
 					<div class="sliderkit-news">
 						<h3 class="titlePage">OM Feeling Like</h3>

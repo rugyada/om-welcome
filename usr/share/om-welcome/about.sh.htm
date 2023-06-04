@@ -26,9 +26,10 @@ cat << EOF
 			<li><a href="news.sh.htm">$menunews</a></li>
 			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
 			<li><a href="conf.sh.htm">$menuconfigure</a></li>
-			<li><a href="apps-office.sh.htm">$menuapps</a></li>
+			<li><a href="apps.sh.htm">$menuapps</a></li>
 			<li><a href="community.sh.htm">$menucontribute</a></li>
-			<li><a href="about.sh.htm">$menuabout</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
+			<li class='active'><a href="about.sh.htm">$menuabout</a></li>
 		</ul>
 	</nav>
 <!-- Home -->
@@ -37,10 +38,11 @@ cat << EOF
 			<img src="images/oma-logo.png"/>
 		</div>
 		 <article class="articles">
-			<h1 class="titlePage"> $about </h1>
+			<h1 class="titlePage"> $about $Name</h1>
+			<p class="blue">$requiretextversion</p>
 			<p class="titlePage">$license</p>
 			<p class="blue">$dependency</p>
-			<p class="blue">$bugs <a class="title" target="hidden" href=./apps/open-bugzilla.run> issues.openmandriva.org</a></p>
+			<p class="blue">$bugs <a class="title" target="hidden" href=./apps/open-bugzilla.run>OpenMandriva Issue Traker</a></p>
 			<p class="blue">Fork and Contribute to $om_appsite <a class="title" target="hidden" href=./apps/open-appsite.run> om-welcome Github Repo</a></p>
 			<p class="blue">$requiretext</p>
 			<p class="blue">$requiretext</p>
@@ -48,7 +50,7 @@ cat << EOF
 	</div>	
 
 	<div id="lodape">
-		<a href="community.sh.htm" class="button">$previous</a>
+		<a href="repo.sh.htm" class="button">$previous</a>
 	</div>
 	<!--div id="rodape">
 		<a href="execute close$" class="button">$endapp</a>
