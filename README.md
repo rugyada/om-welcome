@@ -1,4 +1,5 @@
 # om-welcome
+## browser-picker branch
 
 Designed to introduce new users to OM distro and
 also integrate common tasks for post-installation distro.
